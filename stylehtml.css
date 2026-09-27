@@ -18,7 +18,7 @@ body {
 
 /* ========== NAVBAR ========== */
 .navbar {
-    height: 80px;
+    height: 100px;
     background: #ffffff;
     display: flex;
     align-items: center;
