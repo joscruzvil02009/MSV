@@ -24,9 +24,9 @@ const products = [
     {
         id: 1,
 
-        name: "Tenis deportivos premium",
+        name: "Reloj",
 
-        category: "Moda",
+        category: "tegnologia",
 
         price: 1850,
 
@@ -34,17 +34,17 @@ const products = [
 
         auctionDate: "28 Sep 2026 19:00",
 
-        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80",
+        image: "reloj.png"
 
         description:
-            "Tenis deportivos premium ideales para entrenamiento, ejercicio y uso diario."
+            "Reloj de muñeca analógico de cuarzo para caballero, cronógrafo de acero inoxidable, con calendario "
     },
 
 
     {
         id: 2,
 
-        name: "MacBook Pro",
+        name: "Audifonos Air Pro",
 
         category: "Tecnología",
 
@@ -57,7 +57,7 @@ const products = [
         image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80",
 
         description:
-            "Computadora portátil profesional ideal para programación, diseño y trabajo."
+            "Audífonos Inalámbricos Bluetooth Air Pro, Sonido HiFi, Baja Latencia, Reducción de Ruido".
     },
 
 
