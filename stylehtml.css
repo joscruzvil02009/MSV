@@ -1,3 +1,4 @@
+```css
 /* ==========================================
    FUENTE
    ========================================== */
@@ -17,6 +18,7 @@
 
 html {
     scroll-behavior: smooth;
+    width: 100%;
 }
 
 body {
@@ -24,6 +26,13 @@ body {
     background: #0b0f19;
     color: #ffffff;
     line-height: 1.6;
+    width: 100%;
+    min-width: 320px;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
 }
 
 
@@ -36,11 +45,13 @@ body {
     top: 0;
     z-index: 1000;
 
+    width: 100%;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 18px 6%;
+    padding: 18px 5%;
 
     background: rgba(11, 15, 25, 0.95);
     backdrop-filter: blur(15px);
@@ -58,13 +69,13 @@ body {
 }
 
 .logo-msv {
-    font-size: 26px;
+    font-size: clamp(22px, 2vw, 28px);
     font-weight: 800;
     color: #ffb000;
 }
 
 .logo-text {
-    font-size: 13px;
+    font-size: clamp(11px, 1vw, 13px);
     font-weight: 700;
     letter-spacing: 2px;
 }
@@ -74,14 +85,16 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 28px;
+    align-items: center;
+    gap: clamp(15px, 2vw, 30px);
 }
 
 .nav-links a {
     color: #c8ceda;
     text-decoration: none;
-    font-size: 14px;
+    font-size: clamp(13px, 1vw, 15px);
     transition: 0.3s;
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -135,12 +148,13 @@ body {
    ========================================== */
 
 .hero {
-    min-height: 620px;
+    width: 100%;
+    min-height: 650px;
 
     display: flex;
     align-items: center;
 
-    padding: 80px 8%;
+    padding: clamp(70px, 8vw, 110px) 5%;
 
     background:
         radial-gradient(
@@ -152,20 +166,21 @@ body {
 }
 
 .hero-content {
-    max-width: 750px;
+    width: 100%;
+    max-width: 1100px;
 }
 
 .hero-tag {
     color: #ffb000;
     font-weight: 700;
-    font-size: 14px;
+    font-size: clamp(13px, 1.2vw, 16px);
     letter-spacing: 2px;
 }
 
 .hero h1 {
     margin-top: 20px;
 
-    font-size: clamp(50px, 8vw, 90px);
+    font-size: clamp(50px, 7vw, 100px);
     line-height: 1;
 
     font-weight: 800;
@@ -176,12 +191,12 @@ body {
 }
 
 .hero p {
-    max-width: 600px;
+    max-width: 700px;
 
     margin: 25px 0;
 
     color: #aeb6c5;
-    font-size: 18px;
+    font-size: clamp(16px, 1.5vw, 20px);
 }
 
 .hero-button {
@@ -212,12 +227,14 @@ body {
    ========================================== */
 
 .stats {
+    width: 100%;
+
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 
-    gap: 20px;
+    gap: 25px;
 
-    padding: 50px 8%;
+    padding: 55px 5%;
 
     background: #101622;
 }
@@ -229,12 +246,13 @@ body {
 .stat strong {
     display: block;
 
-    font-size: 30px;
+    font-size: clamp(26px, 3vw, 38px);
     color: #ffb000;
 }
 
 .stat span {
     color: #929aaa;
+    font-size: clamp(13px, 1vw, 16px);
 }
 
 
@@ -245,7 +263,8 @@ body {
 .section-title {
     text-align: center;
 
-    max-width: 700px;
+    width: 100%;
+    max-width: 850px;
 
     margin: 0 auto 45px;
 }
@@ -262,11 +281,12 @@ body {
 .section-title h2 {
     margin-top: 10px;
 
-    font-size: 40px;
+    font-size: clamp(30px, 4vw, 48px);
 }
 
 .section-title p {
     color: #929aaa;
+    font-size: clamp(14px, 1.3vw, 17px);
 }
 
 
@@ -275,14 +295,16 @@ body {
    ========================================== */
 
 .products-section {
-    padding: 100px 8%;
+    width: 100%;
+    padding: clamp(70px, 8vw, 110px) 5%;
 }
 
 
 /* BUSCADOR */
 
 .search-container {
-    max-width: 600px;
+    width: 100%;
+    max-width: 700px;
 
     margin: 0 auto 30px;
 }
@@ -290,7 +312,7 @@ body {
 .search-container input {
     width: 100%;
 
-    padding: 15px 18px;
+    padding: 16px 18px;
 
     border: 1px solid #293346;
     border-radius: 10px;
@@ -300,7 +322,7 @@ body {
     background: #121927;
     color: white;
 
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .search-container input:focus {
@@ -317,7 +339,7 @@ body {
 
     gap: 10px;
 
-    margin-bottom: 35px;
+    margin-bottom: 40px;
 }
 
 .category-btn {
@@ -346,18 +368,23 @@ body {
 /* PRODUCTOS GRID */
 
 .products-grid {
+    width: 100%;
+
     display: grid;
 
-    grid-template-columns:
-        repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(280px, 1fr)
+    );
 
-    gap: 25px;
+    gap: 28px;
 }
 
 
 /* TARJETA */
 
 .product-card {
+    width: 100%;
     overflow: hidden;
 
     background: #121927;
@@ -379,7 +406,7 @@ body {
 
 .product-image {
     width: 100%;
-    height: 220px;
+    height: 240px;
 
     object-fit: cover;
 
@@ -390,7 +417,7 @@ body {
 /* CONTENIDO */
 
 .product-info {
-    padding: 20px;
+    padding: 22px;
 }
 
 .product-category {
@@ -405,7 +432,7 @@ body {
 .product-info h3 {
     margin: 8px 0;
 
-    font-size: 20px;
+    font-size: clamp(18px, 1.5vw, 22px);
 }
 
 .product-price {
@@ -419,7 +446,7 @@ body {
 
     color: white;
 
-    font-size: 22px;
+    font-size: clamp(20px, 2vw, 25px);
 }
 
 
@@ -433,7 +460,7 @@ body {
 .product-actions button {
     flex: 1;
 
-    padding: 11px;
+    padding: 12px;
 
     border-radius: 8px;
 
@@ -488,7 +515,9 @@ body {
    ========================================== */
 
 .auctions-section {
-    padding: 100px 8%;
+    width: 100%;
+
+    padding: clamp(70px, 8vw, 110px) 5%;
 
     background: #101622;
 }
@@ -498,7 +527,8 @@ body {
 
     gap: 15px;
 
-    max-width: 900px;
+    width: 100%;
+    max-width: 1100px;
 
     margin: auto;
 }
@@ -511,7 +541,7 @@ body {
 
     gap: 20px;
 
-    padding: 20px;
+    padding: 22px;
 
     background: #121927;
 
@@ -541,11 +571,14 @@ body {
    ========================================== */
 
 .about-section {
-    padding: 110px 8%;
+    width: 100%;
+
+    padding: clamp(80px, 9vw, 120px) 5%;
 }
 
 .about-content {
-    max-width: 800px;
+    width: 100%;
+    max-width: 900px;
 
     margin: auto;
 
@@ -564,7 +597,7 @@ body {
 .about-content h2 {
     margin: 15px 0 20px;
 
-    font-size: 42px;
+    font-size: clamp(32px, 4vw, 50px);
 }
 
 .about-content p {
@@ -572,7 +605,7 @@ body {
 
     color: #9da6b7;
 
-    font-size: 17px;
+    font-size: clamp(15px, 1.4vw, 18px);
 }
 
 
@@ -581,7 +614,9 @@ body {
    ========================================== */
 
 .footer {
-    padding: 40px 8%;
+    width: 100%;
+
+    padding: 45px 5%;
 
     text-align: center;
 
@@ -593,7 +628,7 @@ body {
 .footer-logo {
     margin-bottom: 10px;
 
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 800;
 }
 
@@ -635,7 +670,7 @@ body {
     position: relative;
 
     width: 100%;
-    max-width: 650px;
+    max-width: 700px;
 
     max-height: 90vh;
 
@@ -683,7 +718,7 @@ body {
 .modal-product-image {
     width: 100%;
 
-    max-height: 350px;
+    max-height: 400px;
 
     object-fit: cover;
 
@@ -701,11 +736,11 @@ body {
 .modal-product-title {
     margin: 10px 0;
 
-    font-size: 32px;
+    font-size: clamp(25px, 3vw, 36px);
 }
 
 .modal-product-price {
-    font-size: 25px;
+    font-size: 28px;
 
     font-weight: 800;
 
@@ -724,6 +759,7 @@ body {
    ========================================== */
 
 .auth-content {
+    width: 100%;
     max-width: 450px;
 }
 
@@ -835,6 +871,7 @@ body {
    ========================================== */
 
 .notification-content {
+    width: 100%;
     max-width: 500px;
 
     text-align: center;
@@ -900,6 +937,7 @@ body {
 
     z-index: 3000;
 
+    width: auto;
     max-width: 350px;
 
     padding: 15px 20px;
@@ -931,14 +969,13 @@ body {
 
 
 /* ==========================================
-   RESPONSIVE PARA CELULARES
+   TABLET
    ========================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
     .navbar {
         flex-wrap: wrap;
-
         gap: 15px;
     }
 
@@ -950,23 +987,52 @@ body {
         justify-content: center;
 
         overflow-x: auto;
+
+        padding-bottom: 3px;
     }
 
     .stats {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .products-grid {
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(250px, 1fr)
+        );
+    }
 }
 
+
+/* ==========================================
+   CELULAR
+   ========================================== */
 
 @media (max-width: 600px) {
 
     .navbar {
-        padding: 15px 4%;
+        padding: 14px 4%;
+    }
+
+    .logo {
+        gap: 5px;
+    }
+
+    .logo-msv {
+        font-size: 22px;
+    }
+
+    .logo-text {
+        font-size: 10px;
+        letter-spacing: 1px;
     }
 
     .nav-links {
-        gap: 15px;
+        gap: 18px;
+
+        justify-content: flex-start;
+
+        padding-bottom: 5px;
     }
 
     .nav-links a {
@@ -979,46 +1045,208 @@ body {
         justify-content: center;
     }
 
+    .btn-notifications,
+    .btn-login {
+        padding: 9px 13px;
+    }
+
     .btn-notifications span {
         display: none;
     }
 
+
+    /* HERO */
+
     .hero {
         min-height: 520px;
 
-        padding: 60px 5%;
+        padding: 60px 6%;
     }
 
     .hero h1 {
-        font-size: 50px;
+        font-size: clamp(44px, 14vw, 60px);
     }
 
     .hero p {
         font-size: 15px;
     }
 
-    .stats {
-        padding: 35px 5%;
+    .hero-button {
+        width: 100%;
+        text-align: center;
     }
+
+
+    /* ESTADÍSTICAS */
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 25px 10px;
+
+        padding: 40px 5%;
+    }
+
+
+    /* SECCIONES */
 
     .products-section,
     .auctions-section,
     .about-section {
-        padding: 70px 5%;
+        padding: 65px 5%;
+    }
+
+    .section-title {
+        margin-bottom: 35px;
     }
 
     .section-title h2 {
         font-size: 30px;
     }
 
+
+    /* PRODUCTOS */
+
+    .products-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .product-image {
+        height: 220px;
+    }
+
+    .product-info {
+        padding: 18px;
+    }
+
+
+    /* SUBASTAS */
+
     .auction-item {
         flex-direction: column;
 
         align-items: flex-start;
+
+        padding: 18px;
+    }
+
+    .auction-date {
+        white-space: normal;
+    }
+
+
+    /* MODAL */
+
+    .modal {
+        padding: 12px;
     }
 
     .modal-content {
         padding: 25px 18px;
+
+        max-height: 92vh;
     }
 
+    .modal-product-image {
+        max-height: 280px;
+    }
+
+
+    /* TOAST */
+
+    .toast {
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+
+        max-width: none;
+    }
 }
+
+
+/* ==========================================
+   CELULARES MUY PEQUEÑOS
+   ========================================== */
+
+@media (max-width: 380px) {
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .product-actions {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        gap: 13px;
+    }
+}
+
+
+/* ==========================================
+   LAPTOPS / MONITORES GRANDES
+   ========================================== */
+
+@media (min-width: 1200px) {
+
+    .navbar {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .hero {
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    .products-section,
+    .auctions-section,
+    .about-section {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(300px, 1fr)
+        );
+
+        gap: 30px;
+    }
+
+    .product-image {
+        height: 260px;
+    }
+}
+
+
+/* ==========================================
+   MONITORES MUY GRANDES
+   ========================================== */
+
+@media (min-width: 1600px) {
+
+    .hero-content {
+        max-width: 1250px;
+    }
+
+    .products-section,
+    .auctions-section,
+    .about-section {
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+```
