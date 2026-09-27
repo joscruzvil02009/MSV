@@ -1,52 +1,72 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
 
-    <!-- Hace que la página se adapte a celulares -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>MSV | Subastas</title>
+    <title>MSV | VENTA Y SUBASTAS</title>
 
-    <!-- ==========================================
-         LLAMAMOS AL ARCHIVO CSS
-         El archivo debe llamarse exactamente:
-         style.css
-         ========================================== -->
-    <link rel="stylesheet" href="stylehtml.css">
+    <link rel="stylesheet" href="style/style.css">
+
 </head>
 
 <body>
 
+
     <!-- ==========================================
          BARRA DE NAVEGACIÓN
          ========================================== -->
+
     <header class="navbar">
 
         <div class="logo">
+
             <span class="logo-msv">MSV</span>
-            <span class="logo-text">SUBASTAS</span>
+
+            <span class="logo-text">
+                VENTA Y SUBASTAS
+            </span>
+
         </div>
 
+
         <nav class="nav-links">
+
             <a href="#inicio">Inicio</a>
+
+            <a href="#ofertas">Ofertas</a>
+
             <a href="#productos">Productos</a>
+
             <a href="#subastas">Subastas</a>
+
             <a href="#nosotros">Nosotros</a>
+
         </nav>
+
 
         <div class="nav-actions">
 
-            <!-- Botón de notificaciones -->
-            <button class="btn-notifications" id="notificationBtn">
+            <button
+                class="btn-notifications"
+                id="notificationBtn">
+
                 🔔
                 <span>Notificaciones</span>
+
             </button>
 
-            <!-- Botón de iniciar sesión -->
-            <button class="btn-login" id="loginBtn">
+
+            <button
+                class="btn-login"
+                id="loginBtn">
+
                 👤 Iniciar sesión
+
             </button>
 
         </div>
@@ -54,10 +74,14 @@
     </header>
 
 
+
     <!-- ==========================================
-         SECCIÓN PRINCIPAL / HERO
+         HERO
          ========================================== -->
-    <section class="hero" id="inicio">
+
+    <section
+        class="hero"
+        id="inicio">
 
         <div class="hero-content">
 
@@ -65,62 +89,455 @@
                 🔨 SUBASTAS EN LÍNEA
             </span>
 
+
             <h1>
+
                 Encuentra.
                 <span>Oferta.</span>
                 Gana.
+
             </h1>
 
+
             <p>
-                Descubre productos exclusivos y participa
+
+                Descubre productos exclusivos,
+                aprovecha nuestras ofertas y participa
                 en subastas emocionantes desde cualquier lugar.
+
             </p>
 
-            <a href="#productos" class="hero-button">
-                Ver productos
+
+            <a
+                href="#ofertas"
+                class="hero-button">
+
+                Ver ofertas
+
             </a>
 
         </div>
 
+
+
+        <!-- ==========================================
+             OFERTA DESTACADA
+             ========================================== -->
+
+        <div class="hero-offer">
+
+            <div class="hero-offer-title">
+
+                <span>🔥 OFERTA</span>
+
+                <span class="offer-status">
+                    🟢 ACTIVA
+                </span>
+
+            </div>
+
+
+            <div
+                class="hero-offer-card"
+                onclick="scrollToOffers()">
+
+                <!-- IMAGEN DE LA OFERTA -->
+
+                <div class="hero-offer-image">
+
+                    <!--
+                    COLOCA AQUÍ LA IMAGEN DE TU OFERTA
+
+                    Ejemplo:
+
+                    <img src="img/oferta1.jpg" alt="Oferta">
+                    -->
+
+                    <div class="image-placeholder">
+
+                        🖼️
+
+                        <span>
+                            IMAGEN DE OFERTA
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-offer-info">
+
+                    <h3>
+                        Oferta especial
+                    </h3>
+
+                    <p>
+                        Producto en promoción
+                    </p>
+
+
+                    <div class="offer-stock">
+
+                        <span>
+                            📦 Inventario:
+                        </span>
+
+                        <strong>
+                            10 disponibles
+                        </strong>
+
+                    </div>
+
+
+                    <button class="offer-view-btn">
+
+                        Ver oferta →
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <small>
+                Haz clic en la oferta para ver más
+            </small>
+
+        </div>
+
     </section>
+
 
 
     <!-- ==========================================
-         ESTADÍSTICAS
+         OFERTAS
          ========================================== -->
-    <section class="stats">
 
-        <div class="stat">
-            <strong>+500</strong>
-            <span>Productos</span>
+    <section
+        class="offers-section"
+        id="ofertas">
+
+
+        <div class="section-title">
+
+            <span>🔥 OFERTAS</span>
+
+            <h2>
+                Ofertas especiales
+            </h2>
+
+            <p>
+                Aprovecha nuestros productos en promoción
+                antes de que se agoten.
+            </p>
+
         </div>
 
-        <div class="stat">
-            <strong>+1,200</strong>
-            <span>Usuarios</span>
+
+
+        <!-- CONTENEDOR DE OFERTAS -->
+
+        <div class="offers-slider-wrapper">
+
+            <button
+                class="offer-arrow offer-left"
+                onclick="scrollOffers(-1)">
+
+                ‹
+
+            </button>
+
+
+            <div
+                class="offers-slider"
+                id="offersSlider">
+
+
+                <!-- ==================================
+                     OFERTA 1
+                     ================================== -->
+
+                <article
+                    class="offer-card"
+                    onclick="openOffer(0)">
+
+                    <div class="offer-image">
+
+                        <!-- AGREGA TU IMAGEN AQUÍ -->
+
+                        <div class="image-placeholder">
+
+                            🖼️
+
+                            <span>
+                                IMAGEN OFERTA 1
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="offer-card-info">
+
+                        <span class="offer-category">
+                            Tecnología
+                        </span>
+
+                        <h3>
+                            Producto en oferta
+                        </h3>
+
+                        <div class="offer-prices">
+
+                            <del>
+                                $1,500
+                            </del>
+
+                            <strong>
+                                $999
+                            </strong>
+
+                        </div>
+
+
+                        <div class="offer-inventory">
+
+                            🟢 Activa
+
+                            <span>
+                                10 disponibles
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ==================================
+                     OFERTA 2
+                     ================================== -->
+
+                <article
+                    class="offer-card"
+                    onclick="openOffer(1)">
+
+                    <div class="offer-image">
+
+                        <div class="image-placeholder">
+
+                            🖼️
+
+                            <span>
+                                IMAGEN OFERTA 2
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="offer-card-info">
+
+                        <span class="offer-category">
+                            Vehículos
+                        </span>
+
+                        <h3>
+                            Producto en oferta
+                        </h3>
+
+                        <div class="offer-prices">
+
+                            <del>
+                                $5,000
+                            </del>
+
+                            <strong>
+                                $3,999
+                            </strong>
+
+                        </div>
+
+
+                        <div class="offer-inventory">
+
+                            🟢 Activa
+
+                            <span>
+                                5 disponibles
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ==================================
+                     OFERTA 3
+                     ================================== -->
+
+                <article
+                    class="offer-card"
+                    onclick="openOffer(2)">
+
+                    <div class="offer-image">
+
+                        <div class="image-placeholder">
+
+                            🖼️
+
+                            <span>
+                                IMAGEN OFERTA 3
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="offer-card-info">
+
+                        <span class="offer-category">
+                            Moda
+                        </span>
+
+                        <h3>
+                            Producto en oferta
+                        </h3>
+
+                        <div class="offer-prices">
+
+                            <del>
+                                $1,200
+                            </del>
+
+                            <strong>
+                                $799
+                            </strong>
+
+                        </div>
+
+
+                        <div class="offer-inventory">
+
+                            🟢 Activa
+
+                            <span>
+                                8 disponibles
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ==================================
+                     OFERTA 4
+                     ================================== -->
+
+                <article
+                    class="offer-card"
+                    onclick="openOffer(3)">
+
+                    <div class="offer-image">
+
+                        <div class="image-placeholder">
+
+                            🖼️
+
+                            <span>
+                                IMAGEN OFERTA 4
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="offer-card-info">
+
+                        <span class="offer-category">
+                            Coleccionables
+                        </span>
+
+                        <h3>
+                            Producto en oferta
+                        </h3>
+
+                        <div class="offer-prices">
+
+                            <del>
+                                $2,000
+                            </del>
+
+                            <strong>
+                                $1,299
+                            </strong>
+
+                        </div>
+
+
+                        <div class="offer-inventory">
+
+                            🟢 Activa
+
+                            <span>
+                                3 disponibles
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+            <button
+                class="offer-arrow offer-right"
+                onclick="scrollOffers(1)">
+
+                ›
+
+            </button>
+
         </div>
 
-        <div class="stat">
-            <strong>+850</strong>
-            <span>Subastas realizadas</span>
-        </div>
 
-        <div class="stat">
-            <strong>24/7</strong>
-            <span>Disponible</span>
-        </div>
+        <p class="offer-scroll-text">
+            ← Desliza para ver más ofertas →
+        </p>
 
     </section>
+
 
 
     <!-- ==========================================
          PRODUCTOS
          ========================================== -->
-    <section class="products-section" id="productos">
+
+    <section
+        class="products-section"
+        id="productos">
+
 
         <div class="section-title">
 
-            <span>EXPLORA</span>
+            <span>PRODUCTOS A VENTA</span>
 
             <h2>
                 Productos destacados
@@ -134,54 +551,151 @@
         </div>
 
 
-        <!-- Buscador -->
+        <!-- BUSCADOR -->
+
         <div class="search-container">
 
             <input
                 type="text"
                 id="searchInput"
-                placeholder="🔎 Buscar productos..."
-            >
+                placeholder="🔎 Buscar productos...">
 
         </div>
 
 
-        <!-- Categorías -->
+
+        <!-- CATEGORÍAS -->
+
         <div class="category-buttons">
 
-            <button class="category-btn active" data-category="Todos">
+            <button
+                class="category-btn active"
+                data-category="Todos">
+
                 Todos
+
             </button>
 
-            <button class="category-btn" data-category="Tecnología">
+
+            <button
+                class="category-btn"
+                data-category="Tecnología">
+
                 Tecnología
+
             </button>
 
-            <button class="category-btn" data-category="Vehículos">
+
+            <button
+                class="category-btn"
+                data-category="Vehículos">
+
                 Vehículos
+
             </button>
 
-            <button class="category-btn" data-category="Moda">
+
+            <button
+                class="category-btn"
+                data-category="Moda">
+
                 Moda
+
             </button>
 
-            <button class="category-btn" data-category="Coleccionables">
+
+            <button
+                class="category-btn"
+                data-category="Coleccionables">
+
                 Coleccionables
+
             </button>
 
         </div>
 
 
-        <!-- Aquí JavaScript colocará los productos -->
-        <div class="products-grid" id="productsGrid"></div>
+
+        <!-- ======================================
+             PRODUCTOS
+
+             JavaScript colocará aquí
+             los productos.
+             ====================================== -->
+
+        <div
+            class="products-grid"
+            id="productsGrid">
+
+
+            <!-- ESPACIO PARA PRODUCTOS -->
+
+            <div class="product-placeholder">
+
+                <div class="placeholder-image">
+                    🖼️
+                </div>
+
+                <h3>
+                    Imagen del producto
+                </h3>
+
+                <p>
+                    Aquí aparecerán los productos
+                    de esta categoría.
+                </p>
+
+            </div>
+
+
+            <div class="product-placeholder">
+
+                <div class="placeholder-image">
+                    🖼️
+                </div>
+
+                <h3>
+                    Imagen del producto
+                </h3>
+
+                <p>
+                    Agrega otro producto aquí.
+                </p>
+
+            </div>
+
+
+            <div class="product-placeholder">
+
+                <div class="placeholder-image">
+                    🖼️
+                </div>
+
+                <h3>
+                    Imagen del producto
+                </h3>
+
+                <p>
+                    Agrega otro producto aquí.
+                </p>
+
+            </div>
+
+
+        </div>
 
     </section>
+
 
 
     <!-- ==========================================
          SUBASTAS
          ========================================== -->
-    <section class="auctions-section" id="subastas">
+
+    <section
+        class="auctions-section"
+        id="subastas">
+
 
         <div class="section-title">
 
@@ -192,36 +706,50 @@
             </h2>
 
             <p>
-                No te pierdas ninguna oportunidad.
+                PRÓXIMA SUBASTA SÁBADO 10 DE OCTUBRE.
+                HORA: 12:00 PM.
             </p>
 
         </div>
 
 
-        <!-- JavaScript colocará las subastas aquí -->
-        <div class="auction-list" id="auctionList"></div>
+        <div
+            class="auction-list"
+            id="auctionList">
+
+        </div>
 
     </section>
 
 
+
     <!-- ==========================================
-         SOBRE NOSOTROS
+         NOSOTROS
          ========================================== -->
-    <section class="about-section" id="nosotros">
+
+    <section
+        class="about-section"
+        id="nosotros">
+
 
         <div class="about-content">
 
-            <span>MSV SUBASTAS</span>
+            <span>
+                MSV SUBASTAS
+            </span>
+
 
             <h2>
                 Una nueva forma de subastar
             </h2>
+
 
             <p>
                 En MSV Subastas buscamos ofrecer una experiencia
                 sencilla y emocionante para comprar y vender productos
                 mediante subastas en línea.
             </p>
+
 
             <p>
                 Explora nuestros productos, realiza tus ofertas
@@ -233,56 +761,115 @@
     </section>
 
 
+
     <!-- ==========================================
-         PIE DE PÁGINA
+         FOOTER
          ========================================== -->
+
     <footer class="footer">
 
         <div class="footer-logo">
-            MSV <span>SUBASTAS</span>
+
+            MSV
+            <span>SUBASTAS</span>
+
         </div>
 
+
         <p>
-            © 2026 MSV Subastas. Todos los derechos reservados.
+            © 2026 MSV Subastas.
+            Todos los derechos reservados.
         </p>
 
     </footer>
 
 
+
     <!-- ==========================================
-         MODAL DE PRODUCTO
+         MODAL PRODUCTO
          ========================================== -->
-    <div class="modal" id="productModal">
+
+    <div
+        class="modal"
+        id="productModal">
 
         <div class="modal-content">
 
-            <button class="modal-close" id="closeProductModal">
+            <button
+                class="modal-close"
+                id="closeProductModal">
+
                 ×
+
             </button>
 
-            <div id="productModalContent"></div>
+
+            <div
+                id="productModalContent">
+            </div>
 
         </div>
 
     </div>
 
 
+
     <!-- ==========================================
-         MODAL DE INICIAR SESIÓN / REGISTRO
+         MODAL OFERTA
          ========================================== -->
-    <div class="modal" id="loginModal">
+
+    <div
+        class="modal"
+        id="offerModal">
+
+        <div class="modal-content offer-modal">
+
+            <button
+                class="modal-close"
+                onclick="closeOffer()">
+
+                ×
+
+            </button>
+
+
+            <div id="offerModalContent">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         LOGIN / REGISTRO
+         ========================================== -->
+
+    <div
+        class="modal"
+        id="loginModal">
+
 
         <div class="modal-content auth-content">
 
-            <button class="modal-close" id="closeLoginModal">
+
+            <button
+                class="modal-close"
+                id="closeLoginModal">
+
                 ×
+
             </button>
+
 
             <div class="auth-header">
 
                 <h2 id="authTitle">
                     Iniciar sesión
                 </h2>
+
 
                 <p id="authDescription">
                     Entra a tu cuenta de MSV Subastas.
@@ -291,72 +878,80 @@
             </div>
 
 
-            <!-- Formulario -->
+
             <form id="authForm">
 
-                <!-- Nombre -->
-                <div class="form-group" id="nameGroup">
+
+                <div
+                    class="form-group"
+                    id="nameGroup">
 
                     <label for="authName">
                         Nombre
                     </label>
 
+
                     <input
                         type="text"
                         id="authName"
-                        placeholder="Tu nombre"
-                    >
+                        placeholder="Tu nombre">
 
                 </div>
 
 
-                <!-- Correo -->
+
                 <div class="form-group">
 
                     <label for="authEmail">
                         Correo electrónico
                     </label>
 
+
                     <input
                         type="email"
                         id="authEmail"
                         placeholder="correo@ejemplo.com"
-                        required
-                    >
+                        required>
 
                 </div>
 
 
-                <!-- Contraseña -->
+
                 <div class="form-group">
 
                     <label for="authPassword">
                         Contraseña
                     </label>
 
+
                     <input
                         type="password"
                         id="authPassword"
                         placeholder="********"
-                        required
-                    >
+                        required>
 
                 </div>
 
 
-                <button type="submit" class="auth-submit">
+
+                <button
+                    type="submit"
+                    class="auth-submit">
+
                     Iniciar sesión
+
                 </button>
 
             </form>
 
 
-            <!-- Cambiar entre login y registro -->
+
             <div class="auth-switch">
 
                 <span id="authSwitchText">
                     ¿No tienes una cuenta?
                 </span>
+
 
                 <button id="authSwitchBtn">
                     Registrarme
@@ -365,9 +960,12 @@
             </div>
 
 
+
             <div class="demo-warning">
+
                 ⚠️ Esta versión utiliza almacenamiento local
                 únicamente para demostración.
+
             </div>
 
         </div>
@@ -375,16 +973,28 @@
     </div>
 
 
+
     <!-- ==========================================
-         MODAL DE NOTIFICACIONES
+         NOTIFICACIONES
          ========================================== -->
-    <div class="modal" id="notificationModal">
 
-        <div class="modal-content notification-content">
+    <div
+        class="modal"
+        id="notificationModal">
 
-            <button class="modal-close" id="closeNotificationModal">
+
+        <div
+            class="modal-content notification-content">
+
+
+            <button
+                class="modal-close"
+                id="closeNotificationModal">
+
                 ×
+
             </button>
+
 
             <div class="notification-header">
 
@@ -396,22 +1006,29 @@
 
             </div>
 
+
             <p id="notificationStatus">
+
                 Las notificaciones están desactivadas.
+
             </p>
+
 
             <button
                 class="notification-permission-btn"
-                id="enableNotificationsBtn"
-            >
+                id="enableNotificationsBtn">
+
                 Activar notificaciones
+
             </button>
+
 
             <button
                 class="notification-test-btn"
-                id="testNotificationBtn"
-            >
+                id="testNotificationBtn">
+
                 Probar notificación
+
             </button>
 
         </div>
@@ -419,19 +1036,225 @@
     </div>
 
 
-    <!-- ==========================================
-         MENSAJES TEMPORALES
-         ========================================== -->
-    <div class="toast" id="toast"></div>
+
+    <!-- TOAST -->
+
+    <div
+        class="toast"
+        id="toast">
+    </div>
 
 
-    <!-- ==========================================
-         LLAMAMOS AL ARCHIVO JAVASCRIPT
 
-         El archivo debe llamarse:
-         script.js
-         ========================================== -->
+    <!-- JAVASCRIPT -->
+
     <script src="script.js"></script>
+
+
+    <!-- FUNCIONES DE OFERTAS -->
+
+    <script>
+
+        function scrollToOffers() {
+
+            document
+                .getElementById("ofertas")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+        }
+
+
+        function scrollOffers(direction) {
+
+            const slider =
+                document.getElementById("offersSlider");
+
+            const amount = 350;
+
+            slider.scrollBy({
+
+                left: direction * amount,
+
+                behavior: "smooth"
+
+            });
+
+        }
+
+
+        const offers = [
+
+            {
+                name: "Producto en oferta",
+                category: "Tecnología",
+                price: "$999",
+                oldPrice: "$1,500",
+                stock: "10 disponibles",
+                image: ""
+            },
+
+            {
+                name: "Producto en oferta",
+                category: "Vehículos",
+                price: "$3,999",
+                oldPrice: "$5,000",
+                stock: "5 disponibles",
+                image: ""
+            },
+
+            {
+                name: "Producto en oferta",
+                category: "Moda",
+                price: "$799",
+                oldPrice: "$1,200",
+                stock: "8 disponibles",
+                image: ""
+            },
+
+            {
+                name: "Producto en oferta",
+                category: "Coleccionables",
+                price: "$1,299",
+                oldPrice: "$2,000",
+                stock: "3 disponibles",
+                image: ""
+            }
+
+        ];
+
+
+        function openOffer(index) {
+
+            const offer = offers[index];
+
+            const modal =
+                document.getElementById("offerModal");
+
+            const content =
+                document.getElementById("offerModalContent");
+
+
+            content.innerHTML = `
+
+                <div class="offer-modal-image">
+
+                    ${
+                        offer.image
+
+                        ?
+
+                        `<img
+                            src="${offer.image}"
+                            alt="${offer.name}">`
+
+                        :
+
+                        `
+                        <div class="image-placeholder large">
+
+                            🖼️
+
+                            <span>
+                                IMAGEN DE LA OFERTA
+                            </span>
+
+                        </div>
+                        `
+                    }
+
+                </div>
+
+
+                <span class="offer-category">
+
+                    ${offer.category}
+
+                </span>
+
+
+                <h2>
+                    ${offer.name}
+                </h2>
+
+
+                <div class="offer-modal-price">
+
+                    <del>
+                        ${offer.oldPrice}
+                    </del>
+
+                    <strong>
+                        ${offer.price}
+                    </strong>
+
+                </div>
+
+
+                <p class="modal-stock">
+
+                    🟢 OFERTA ACTIVA
+
+                    <br>
+
+                    📦 Inventario:
+                    ${offer.stock}
+
+                </p>
+
+
+                <button
+                    class="buy-offer-btn"
+                    onclick="buyOffer()">
+
+                    🛒 Comprar ahora
+
+                </button>
+
+            `;
+
+
+            modal.classList.add("show");
+
+        }
+
+
+        function closeOffer() {
+
+            document
+                .getElementById("offerModal")
+                .classList.remove("show");
+
+        }
+
+
+        function buyOffer() {
+
+            alert(
+                "Aquí podrás colocar posteriormente el sistema de compra."
+            );
+
+        }
+
+
+        window.addEventListener(
+            "click",
+            function(event) {
+
+                const modal =
+                    document.getElementById("offerModal");
+
+                if (event.target === modal) {
+
+                    closeOffer();
+
+                }
+
+            }
+        );
+
+    </script>
 
 </body>
 
