@@ -1,35 +1,69 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
+
+    <!-- Hace que la página se adapte a celulares -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>MSV | Subastas</title>
-    <link rel="stylesheet" href="stylehtml.css">
-    <script src="./script.js"></script>
+
+    <!-- ==========================================
+         LLAMAMOS AL ARCHIVO CSS
+         El archivo debe llamarse exactamente:
+         style.css
+         ========================================== -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- NAVBAR -->
+    <!-- ==========================================
+         BARRA DE NAVEGACIÓN
+         ========================================== -->
     <header class="navbar">
+
         <div class="logo">
-            <span>MSV</span>
-            <small>SUBASTAS</small>
+            <span class="logo-msv">MSV</span>
+            <span class="logo-text">SUBASTAS</span>
         </div>
 
-        <nav>
+        <nav class="nav-links">
             <a href="#inicio">Inicio</a>
             <a href="#productos">Productos</a>
             <a href="#subastas">Subastas</a>
             <a href="#nosotros">Nosotros</a>
         </nav>
 
-        <button class="btn-login">Iniciar sesión</button>
+        <div class="nav-actions">
+
+            <!-- Botón de notificaciones -->
+            <button class="btn-notifications" id="notificationBtn">
+                🔔
+                <span>Notificaciones</span>
+            </button>
+
+            <!-- Botón de iniciar sesión -->
+            <button class="btn-login" id="loginBtn">
+                👤 Iniciar sesión
+            </button>
+
+        </div>
+
     </header>
 
-    <!-- HERO -->
+
+    <!-- ==========================================
+         SECCIÓN PRINCIPAL / HERO
+         ========================================== -->
     <section class="hero" id="inicio">
+
         <div class="hero-content">
-            <p class="etiqueta">PLATAFORMA DE SUBASTAS</p>
+
+            <span class="hero-tag">
+                🔨 SUBASTAS EN LÍNEA
+            </span>
 
             <h1>
                 Encuentra.
@@ -37,164 +71,368 @@
                 Gana.
             </h1>
 
-            <p class="hero-text">
-                Descubre productos exclusivos y participa en nuestras
-                próximas subastas de manera rápida y segura.
+            <p>
+                Descubre productos exclusivos y participa
+                en subastas emocionantes desde cualquier lugar.
             </p>
 
-            <div class="hero-buttons">
-                <a href="#productos" class="btn-primary">Ver productos</a>
-                <a href="#subastas" class="btn-secondary">Próximas subastas</a>
-            </div>
+            <a href="#productos" class="hero-button">
+                Ver productos
+            </a>
+
         </div>
 
-        <div class="hero-card">
-            <div class="card-top">
-                <span>🔥 OFERTAS</span>
-                <span class="live">● ACTIVA</span>
-            </div>
-
-            <img src="reloj.png"
-                 alt="Tenis deportivos">
-
-            <div class="hero-product-info">
-                <h3>Tenis deportivos premium</h3>
-                <p>Precio actual</p>
-                <strong>$1,850 MXN</strong>
-
-                <div class="hero-details">
-                    <span>📅 28 Sep 2026</span>
-                    <span>⏰ 19:00</span>
-                </div>
-            </div>
-        </div>
     </section>
 
-    <!-- STATS -->
+
+    <!-- ==========================================
+         ESTADÍSTICAS
+         ========================================== -->
     <section class="stats">
-        <div>
-            <strong>120+</strong>
+
+        <div class="stat">
+            <strong>+500</strong>
             <span>Productos</span>
         </div>
-        <div>
-            <strong>35</strong>
-            <span>Subastas activas</span>
-        </div>
-        <div>
-            <strong>850+</strong>
+
+        <div class="stat">
+            <strong>+1,200</strong>
             <span>Usuarios</span>
         </div>
-        <div>
+
+        <div class="stat">
+            <strong>+850</strong>
+            <span>Subastas realizadas</span>
+        </div>
+
+        <div class="stat">
             <strong>24/7</strong>
-            <span>Plataforma disponible</span>
+            <span>Disponible</span>
         </div>
+
     </section>
 
-    <!-- PRODUCTOS -->
+
+    <!-- ==========================================
+         PRODUCTOS
+         ========================================== -->
     <section class="products-section" id="productos">
+
         <div class="section-title">
-            <div>
-                <p class="etiqueta">CATÁLOGO</p>
-                <h2>Productos en subasta</h2>
-                <p>
-                    Explora los productos disponibles y revisa
-                    cuándo comenzará cada subasta.
-                </p>
-            </div>
 
-            <div class="search-box">
-                🔎
-                <input type="text" id="searchInput" placeholder="Buscar producto...">
-            </div>
-        </div>
+            <span>EXPLORA</span>
 
-        <div class="filters">
-            <button class="filter active" data-category="Todos">Todos</button>
-            <button class="filter" data-category="Tecnología">Tecnología</button>
-            <button class="filter" data-category="Vehículos">Vehículos</button>
-            <button class="filter" data-category="Moda">Moda</button>
-            <button class="filter" data-category="Coleccionables">Coleccionables</button>
-        </div>
+            <h2>
+                Productos destacados
+            </h2>
 
-        <div class="products-grid" id="productsGrid"></div>
-    </section>
-
-    <!-- SUBASTAS -->
-    <section class="auctions-section" id="subastas">
-        <div class="section-title centered">
-            <p class="etiqueta">CALENDARIO</p>
-            <h2>Próximas subastas</h2>
-            <p>Consulta las fechas y horarios de nuestras próximas subastas.</p>
-        </div>
-
-        <div class="auction-table">
-            <div class="table-header">
-                <span>Producto</span>
-                <span>Fecha</span>
-                <span>Hora</span>
-                <span>Precio inicial</span>
-                <span>Estado</span>
-            </div>
-            <div id="auctionList"></div>
-        </div>
-    </section>
-
-    <!-- NOSOTROS -->
-    <section class="about" id="nosotros">
-        <div class="about-content">
-            <p class="etiqueta">SOBRE MSV</p>
-            <h2>Una nueva forma de participar en subastas.</h2>
             <p>
-                MSV es una plataforma diseñada para conectar compradores
-                con productos disponibles mediante subastas.
-                Consulta los artículos, revisa sus detalles y conoce
-                exactamente cuándo comenzará cada subasta.
+                Encuentra artículos increíbles y participa
+                en nuestras subastas.
             </p>
 
-            <div class="about-features">
-                <div>
-                    <span>✓</span>
-                    <p>Productos verificados</p>
-                </div>
-                <div>
-                    <span>✓</span>
-                    <p>Fechas claras de subasta</p>
-                </div>
-                <div>
-                    <span>✓</span>
-                    <p>Información detallada</p>
-                </div>
-            </div>
         </div>
 
-        <div class="about-number">
-            <span>MSV</span>
-            <p>SUBASTAS</p>
+
+        <!-- Buscador -->
+        <div class="search-container">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔎 Buscar productos..."
+            >
+
         </div>
+
+
+        <!-- Categorías -->
+        <div class="category-buttons">
+
+            <button class="category-btn active" data-category="Todos">
+                Todos
+            </button>
+
+            <button class="category-btn" data-category="Tecnología">
+                Tecnología
+            </button>
+
+            <button class="category-btn" data-category="Vehículos">
+                Vehículos
+            </button>
+
+            <button class="category-btn" data-category="Moda">
+                Moda
+            </button>
+
+            <button class="category-btn" data-category="Coleccionables">
+                Coleccionables
+            </button>
+
+        </div>
+
+
+        <!-- Aquí JavaScript colocará los productos -->
+        <div class="products-grid" id="productsGrid"></div>
+
     </section>
 
-    <!-- FOOTER -->
-    <footer>
+
+    <!-- ==========================================
+         SUBASTAS
+         ========================================== -->
+    <section class="auctions-section" id="subastas">
+
+        <div class="section-title">
+
+            <span>EN VIVO</span>
+
+            <h2>
+                Próximas subastas
+            </h2>
+
+            <p>
+                No te pierdas ninguna oportunidad.
+            </p>
+
+        </div>
+
+
+        <!-- JavaScript colocará las subastas aquí -->
+        <div class="auction-list" id="auctionList"></div>
+
+    </section>
+
+
+    <!-- ==========================================
+         SOBRE NOSOTROS
+         ========================================== -->
+    <section class="about-section" id="nosotros">
+
+        <div class="about-content">
+
+            <span>MSV SUBASTAS</span>
+
+            <h2>
+                Una nueva forma de subastar
+            </h2>
+
+            <p>
+                En MSV Subastas buscamos ofrecer una experiencia
+                sencilla y emocionante para comprar y vender productos
+                mediante subastas en línea.
+            </p>
+
+            <p>
+                Explora nuestros productos, realiza tus ofertas
+                y mantente informado sobre las nuevas subastas.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         PIE DE PÁGINA
+         ========================================== -->
+    <footer class="footer">
+
         <div class="footer-logo">
-            <strong>MSV</strong>
-            <span>SUBASTAS</span>
+            MSV <span>SUBASTAS</span>
         </div>
-        <p>© 2026 MSV Subastas. Todos los derechos reservados.</p>
-        <div class="footer-links">
-            <a href="#">Privacidad</a>
-            <a href="#">Términos</a>
-            <a href="#">Contacto</a>
-        </div>
+
+        <p>
+            © 2026 MSV Subastas. Todos los derechos reservados.
+        </p>
+
     </footer>
 
-    <!-- MODAL -->
+
+    <!-- ==========================================
+         MODAL DE PRODUCTO
+         ========================================== -->
     <div class="modal" id="productModal">
+
         <div class="modal-content">
-            <button class="close-modal" id="closeModal">×</button>
-            <div id="modalBody"></div>
+
+            <button class="modal-close" id="closeProductModal">
+                ×
+            </button>
+
+            <div id="productModalContent"></div>
+
         </div>
+
     </div>
 
+
+    <!-- ==========================================
+         MODAL DE INICIAR SESIÓN / REGISTRO
+         ========================================== -->
+    <div class="modal" id="loginModal">
+
+        <div class="modal-content auth-content">
+
+            <button class="modal-close" id="closeLoginModal">
+                ×
+            </button>
+
+            <div class="auth-header">
+
+                <h2 id="authTitle">
+                    Iniciar sesión
+                </h2>
+
+                <p id="authDescription">
+                    Entra a tu cuenta de MSV Subastas.
+                </p>
+
+            </div>
+
+
+            <!-- Formulario -->
+            <form id="authForm">
+
+                <!-- Nombre -->
+                <div class="form-group" id="nameGroup">
+
+                    <label for="authName">
+                        Nombre
+                    </label>
+
+                    <input
+                        type="text"
+                        id="authName"
+                        placeholder="Tu nombre"
+                    >
+
+                </div>
+
+
+                <!-- Correo -->
+                <div class="form-group">
+
+                    <label for="authEmail">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="authEmail"
+                        placeholder="correo@ejemplo.com"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Contraseña -->
+                <div class="form-group">
+
+                    <label for="authPassword">
+                        Contraseña
+                    </label>
+
+                    <input
+                        type="password"
+                        id="authPassword"
+                        placeholder="********"
+                        required
+                    >
+
+                </div>
+
+
+                <button type="submit" class="auth-submit">
+                    Iniciar sesión
+                </button>
+
+            </form>
+
+
+            <!-- Cambiar entre login y registro -->
+            <div class="auth-switch">
+
+                <span id="authSwitchText">
+                    ¿No tienes una cuenta?
+                </span>
+
+                <button id="authSwitchBtn">
+                    Registrarme
+                </button>
+
+            </div>
+
+
+            <div class="demo-warning">
+                ⚠️ Esta versión utiliza almacenamiento local
+                únicamente para demostración.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================
+         MODAL DE NOTIFICACIONES
+         ========================================== -->
+    <div class="modal" id="notificationModal">
+
+        <div class="modal-content notification-content">
+
+            <button class="modal-close" id="closeNotificationModal">
+                ×
+            </button>
+
+            <div class="notification-header">
+
+                <span>🔔</span>
+
+                <h2>
+                    Notificaciones
+                </h2>
+
+            </div>
+
+            <p id="notificationStatus">
+                Las notificaciones están desactivadas.
+            </p>
+
+            <button
+                class="notification-permission-btn"
+                id="enableNotificationsBtn"
+            >
+                Activar notificaciones
+            </button>
+
+            <button
+                class="notification-test-btn"
+                id="testNotificationBtn"
+            >
+                Probar notificación
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================
+         MENSAJES TEMPORALES
+         ========================================== -->
+    <div class="toast" id="toast"></div>
+
+
+    <!-- ==========================================
+         LLAMAMOS AL ARCHIVO JAVASCRIPT
+
+         El archivo debe llamarse:
+         script.js
+         ========================================== -->
     <script src="script.js"></script>
+
 </body>
+
 </html>
