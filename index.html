@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSV | Subastas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <span>MSV</span>
+            <small>SUBASTAS</small>
+        </div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#productos">Productos</a>
+            <a href="#subastas">Subastas</a>
+            <a href="#nosotros">Nosotros</a>
+        </nav>
+
+        <button class="btn-login">Iniciar sesión</button>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <p class="etiqueta">PLATAFORMA DE SUBASTAS</p>
+
+            <h1>
+                Encuentra.
+                <span>Oferta.</span>
+                Gana.
+            </h1>
+
+            <p class="hero-text">
+                Descubre productos exclusivos y participa en nuestras
+                próximas subastas de manera rápida y segura.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#productos" class="btn-primary">Ver productos</a>
+                <a href="#subastas" class="btn-secondary">Próximas subastas</a>
+            </div>
+        </div>
+
+        <div class="hero-card">
+            <div class="card-top">
+                <span>🔥 SUBASTA DESTACADA</span>
+                <span class="live">● ACTIVA</span>
+            </div>
+
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80"
+                 alt="Tenis deportivos">
+
+            <div class="hero-product-info">
+                <h3>Tenis deportivos premium</h3>
+                <p>Precio actual</p>
+                <strong>$1,850 MXN</strong>
+
+                <div class="hero-details">
+                    <span>📅 28 Sep 2026</span>
+                    <span>⏰ 19:00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+        <div>
+            <strong>120+</strong>
+            <span>Productos</span>
+        </div>
+        <div>
+            <strong>35</strong>
+            <span>Subastas activas</span>
+        </div>
+        <div>
+            <strong>850+</strong>
+            <span>Usuarios</span>
+        </div>
+        <div>
+            <strong>24/7</strong>
+            <span>Plataforma disponible</span>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section class="products-section" id="productos">
+        <div class="section-title">
+            <div>
+                <p class="etiqueta">CATÁLOGO</p>
+                <h2>Productos en subasta</h2>
+                <p>
+                    Explora los productos disponibles y revisa
+                    cuándo comenzará cada subasta.
+                </p>
+            </div>
+
+            <div class="search-box">
+                🔎
+                <input type="text" id="searchInput" placeholder="Buscar producto...">
+            </div>
+        </div>
+
+        <div class="filters">
+            <button class="filter active" data-category="Todos">Todos</button>
+            <button class="filter" data-category="Tecnología">Tecnología</button>
+            <button class="filter" data-category="Vehículos">Vehículos</button>
+            <button class="filter" data-category="Moda">Moda</button>
+            <button class="filter" data-category="Coleccionables">Coleccionables</button>
+        </div>
+
+        <div class="products-grid" id="productsGrid"></div>
+    </section>
+
+    <!-- SUBASTAS -->
+    <section class="auctions-section" id="subastas">
+        <div class="section-title centered">
+            <p class="etiqueta">CALENDARIO</p>
+            <h2>Próximas subastas</h2>
+            <p>Consulta las fechas y horarios de nuestras próximas subastas.</p>
+        </div>
+
+        <div class="auction-table">
+            <div class="table-header">
+                <span>Producto</span>
+                <span>Fecha</span>
+                <span>Hora</span>
+                <span>Precio inicial</span>
+                <span>Estado</span>
+            </div>
+            <div id="auctionList"></div>
+        </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section class="about" id="nosotros">
+        <div class="about-content">
+            <p class="etiqueta">SOBRE MSV</p>
+            <h2>Una nueva forma de participar en subastas.</h2>
+            <p>
+                MSV es una plataforma diseñada para conectar compradores
+                con productos disponibles mediante subastas.
+                Consulta los artículos, revisa sus detalles y conoce
+                exactamente cuándo comenzará cada subasta.
+            </p>
+
+            <div class="about-features">
+                <div>
+                    <span>✓</span>
+                    <p>Productos verificados</p>
+                </div>
+                <div>
+                    <span>✓</span>
+                    <p>Fechas claras de subasta</p>
+                </div>
+                <div>
+                    <span>✓</span>
+                    <p>Información detallada</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-number">
+            <span>MSV</span>
+            <p>SUBASTAS</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">
+            <strong>MSV</strong>
+            <span>SUBASTAS</span>
+        </div>
+        <p>© 2026 MSV Subastas. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="#">Privacidad</a>
+            <a href="#">Términos</a>
+            <a href="#">Contacto</a>
+        </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">×</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
