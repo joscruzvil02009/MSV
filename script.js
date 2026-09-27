@@ -34,7 +34,7 @@ const products = [
 
         auctionDate: "28 Sep 2026 19:00",
 
-        image: "reloj.png"
+        image: "reloj1.jpeg"
 
         description:
             "Reloj de muñeca analógico de cuarzo para caballero, cronógrafo de acero inoxidable, con calendario "
