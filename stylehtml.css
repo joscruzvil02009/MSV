@@ -1384,3 +1384,126 @@ img {
         height: 240px;
     }
 }
+
+/* =========================================================
+   IMÁGENES DE LAS OFERTAS
+   ========================================================= */
+
+/* Recuadro donde aparece la imagen en cada tarjeta */
+.offer-image {
+    width: 100%;
+    height: 250px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    background: #ffffff;
+}
+
+
+/* La imagen se mantiene COMPLETA dentro del recuadro */
+.offer-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================================================
+   IMAGEN DE LA OFERTA DESTACADA
+   ========================================================= */
+
+.hero-offer-image {
+    width: 100%;
+    height: 250px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    background: #ffffff;
+}
+
+
+.hero-offer-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================================================
+   IMAGEN GRANDE DEL MODAL
+   ========================================================= */
+
+.offer-modal-image {
+    width: 100%;
+    height: 330px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    background: #111827;
+
+    border-radius: 10px;
+}
+
+
+.offer-modal-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================================================
+   IMAGEN CUANDO NO HAY FOTO
+   ========================================================= */
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .offer-image {
+        height: 220px;
+    }
+
+    .hero-offer-image {
+        height: 220px;
+    }
+
+    .offer-modal-image {
+        height: 260px;
+    }
+
+}
