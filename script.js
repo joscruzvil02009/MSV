@@ -1,8 +1,8 @@
 const articulos = [
     {
         nombre: "RELOJ",
-        precio: "$500",
-        imagen: "reloj.png",
+        precio: "$600",
+        imagen: "imagenes/reloj.png",
         descripcion: "Reloj de muñeca analógico de cuarzo para caballero, cronógrafo de acero inoxidable, con calendario."
     },
 
