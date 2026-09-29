@@ -28,7 +28,7 @@ const offers = [
         // // IMAGEN PRINCIPAL DE LA OFERTA 1
         // // Esta aparece en la tarjeta.
         // // Ejemplo:
-        // // image: "imagenes/oferta1.jpg",
+        // // image: "imagenes/reloj.png",
 
         image: "imagenes/oferta1.jpg",
 
