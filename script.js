@@ -1,361 +1,268 @@
-const articulos = [
-    {
-        nombre: "RELOJ",
-        precio: "$600",
-        imagen: "imagenes/reloj.png",
-        descripcion: "Reloj de muñeca analógico de cuarzo para caballero, cronógrafo de acero inoxidable, con calendario."
-    },
+```javascript
+// =========================================================
+// OFERTAS
+// =========================================================
+//
+// image:
+// Foto que aparecerá en la tarjeta.
+//
+// detailImage:
+// Segunda foto que aparecerá cuando abras el producto.
+//
+// IMPORTANTE:
+// Cambia los nombres de las imágenes por los tuyos.
+//
+// =========================================================
+
+const offers = [
 
     {
-        nombre: "Artículo 2",
-        precio: "$2,000",
-        imagen: "imagenes/articulo2.jpeg",
-        descripcion: "Descripción del segundo artículo disponible para venta o subasta."
+        name: "Producto en oferta",
+        category: "Tecnología",
+
+        price: "$600",
+        oldPrice: "$999",
+
+        stock: "1 disponible",
+
+        // // IMAGEN PRINCIPAL DE LA OFERTA 1
+        // // Esta aparece en la tarjeta.
+        // // Ejemplo:
+        // // image: "imagenes/oferta1.jpg",
+
+        image: "imagenes/oferta1.jpg",
+
+
+        // // SEGUNDA IMAGEN DE LA OFERTA 1
+        // // Esta aparece cuando haces clic en el producto.
+        // // Ejemplo:
+        // // detailImage: "imagenes/oferta1-2.jpg",
+
+        detailImage: "imagenes/oferta1-2.jpg"
     },
 
-    {
-        nombre: "Artículo 3",
-        precio: "$3,500",
-        imagen: "imagenes/articulo3.jpeg",
-        descripcion: "Descripción del tercer artículo disponible para venta o subasta."
-    },
 
     {
-        nombre: "Artículo 4",
-        precio: "$5,000",
-        imagen: "imagenes/articulo4.jpeg",
-        descripcion: "Descripción del cuarto artículo disponible para venta o subasta."
+        name: "Producto en oferta",
+        category: "Tecnología",
+
+        price: "$600",
+        oldPrice: "$899",
+
+        stock: "1 disponible",
+
+        // // IMAGEN PRINCIPAL DE LA OFERTA 2
+
+        image: "imagenes/oferta2.jpg",
+
+
+        // // SEGUNDA IMAGEN DE LA OFERTA 2
+
+        detailImage: "imagenes/oferta2-2.jpg"
+    },
+
+
+    {
+        name: "Producto en oferta",
+        category: "Tecnología",
+
+        price: "$450",
+        oldPrice: "$500",
+
+        stock: "1 disponible",
+
+        // // IMAGEN PRINCIPAL DE LA OFERTA 3
+
+        image: "imagenes/oferta3.jpg",
+
+
+        // // SEGUNDA IMAGEN DE LA OFERTA 3
+
+        detailImage: "imagenes/oferta3-2.jpg"
+    },
+
+
+    {
+        name: "Producto en oferta",
+        category: "Coleccionables",
+
+        price: "$1,299",
+        oldPrice: "$2,000",
+
+        stock: "3 disponibles",
+
+        // // IMAGEN PRINCIPAL DE LA OFERTA 4
+
+        image: "imagenes/oferta4.jpg",
+
+
+        // // SEGUNDA IMAGEN DE LA OFERTA 4
+
+        detailImage: "imagenes/oferta4-2.jpg"
     }
+
 ];
 
 
-/* =========================================================
-   MOSTRAR ARTÍCULOS
-   ========================================================= */
 
-function mostrarArticulos() {
+// =========================================================
+// ABRIR OFERTA
+// =========================================================
 
-    const contenedor = document.getElementById("contenedor-articulos");
+function openOffer(index) {
 
-    // Si la página no tiene el contenedor, no hacemos nada
-    if (!contenedor) {
-        return;
-    }
+    const offer = offers[index];
 
-    // Limpiamos el contenido anterior
-    contenedor.innerHTML = "";
+    const modal =
+        document.getElementById("offerModal");
 
-
-    articulos.forEach((articulo) => {
-
-        const tarjeta = document.createElement("div");
-
-        tarjeta.classList.add("tarjeta-articulo");
+    const content =
+        document.getElementById("offerModalContent");
 
 
-        tarjeta.innerHTML = `
-            
-            <div class="imagen-articulo">
+    // =====================================================
+    // // AQUÍ SE MUESTRA LA SEGUNDA IMAGEN
+    // =====================================================
 
-                <img 
-                    src="${articulo.imagen}" 
-                    alt="${articulo.nombre}"
-                    onerror="this.src='imagenes/sin-imagen.jpeg'"
-                >
+    content.innerHTML = `
 
-            </div>
+        <div class="offer-modal-image">
+
+            ${
+                offer.detailImage
+
+                ?
+
+                `
+                <img
+                    src="${offer.detailImage}"
+                    alt="${offer.name}">
+                `
+
+                :
+
+                `
+                <div class="image-placeholder large">
+
+                    🖼️
+
+                    <span>
+                        IMAGEN DE LA OFERTA
+                    </span>
+
+                </div>
+                `
+            }
+
+        </div>
 
 
-            <div class="informacion-articulo">
+        <span class="offer-category">
 
-                <h2>${articulo.nombre}</h2>
+            ${offer.category}
 
-                <p class="precio-articulo">
-                    ${articulo.precio}
-                </p>
-
-                <p class="descripcion-articulo">
-                    ${articulo.descripcion}
-                </p>
-
-                <button 
-                    class="boton-articulo"
-                    onclick="verArticulo('${articulo.nombre}')"
-                >
-                    Ver artículo
-                </button>
-
-            </div>
-
-        `;
+        </span>
 
 
-        contenedor.appendChild(tarjeta);
+        <h2>
 
-    });
+            ${offer.name}
+
+        </h2>
+
+
+        <div class="offer-modal-price">
+
+            <del>
+
+                ${offer.oldPrice}
+
+            </del>
+
+            <strong>
+
+                ${offer.price}
+
+            </strong>
+
+        </div>
+
+
+        <p class="modal-stock">
+
+            🟢 OFERTA ACTIVA
+
+            <br>
+
+            📦 Inventario:
+
+            ${offer.stock}
+
+        </p>
+
+
+        <button
+            class="buy-offer-btn"
+            onclick="buyOffer()">
+
+            🛒 Comprar ahora
+
+        </button>
+
+    `;
+
+
+    modal.classList.add("show");
 
 }
 
 
-/* =========================================================
-   VER ARTÍCULO
-   ========================================================= */
 
-function verArticulo(nombre) {
+// =========================================================
+// CERRAR OFERTA
+// =========================================================
 
-    const articulo = articulos.find(
-        item => item.nombre === nombre
-    );
+function closeOffer() {
+
+    document
+        .getElementById("offerModal")
+        .classList.remove("show");
+
+}
 
 
-    if (!articulo) {
-        return;
-    }
 
+// =========================================================
+// BOTÓN COMPRAR
+// =========================================================
+
+function buyOffer() {
 
     alert(
-        "Artículo: " + articulo.nombre +
-        "\nPrecio: " + articulo.precio +
-        "\n\n" + articulo.descripcion
+        "Aquí podrás colocar posteriormente el sistema de compra."
     );
 
 }
 
 
-/* =========================================================
-   BOTÓN ARTÍCULOS
-   =========================================================
-   
-   Puedes utilizar:
 
-   onclick="irAArticulos()"
+// =========================================================
+// CERRAR MODAL AL HACER CLIC AFUERA
+// =========================================================
 
-   en tu botón de HTML.
-*/
+window.addEventListener(
+    "click",
+    function(event) {
 
-function irAArticulos() {
+        const modal =
+            document.getElementById("offerModal");
 
-    window.location.href = "articulos.html";
+        if (event.target === modal) {
 
-}
+            closeOffer();
 
-
-/* =========================================================
-   BOTÓN X / REGRESAR
-   =========================================================
-   
-   Puedes utilizar:
-
-   onclick="regresarInicio()"
-
-   en tu botón X.
-*/
-
-function regresarInicio() {
-
-    window.location.href = "index.html";
-
-}
-
-
-/* =========================================================
-   BOTÓN VOLVER
-   ========================================================= */
-
-function volver() {
-
-    window.history.back();
-
-}
-
-
-/* =========================================================
-   MENÚ MÓVIL
-   ========================================================= */
-
-function abrirMenu() {
-
-    const menu = document.getElementById("menu");
-
-    if (menu) {
-
-        menu.classList.toggle("activo");
+        }
 
     }
-
-}
-
-
-/* =========================================================
-   CERRAR MENÚ
-   ========================================================= */
-
-function cerrarMenu() {
-
-    const menu = document.getElementById("menu");
-
-    if (menu) {
-
-        menu.classList.remove("activo");
-
-    }
-
-}
-
-
-/* =========================================================
-   BUSCADOR DE ARTÍCULOS
-   ========================================================= */
-
-function buscarArticulos() {
-
-    const buscador = document.getElementById("buscador");
-
-    const contenedor = document.getElementById("contenedor-articulos");
-
-
-    if (!buscador || !contenedor) {
-        return;
-    }
-
-
-    const texto = buscador.value.toLowerCase().trim();
-
-
-    const resultados = articulos.filter((articulo) => {
-
-        return (
-            articulo.nombre.toLowerCase().includes(texto) ||
-            articulo.descripcion.toLowerCase().includes(texto) ||
-            articulo.precio.toLowerCase().includes(texto)
-        );
-
-    });
-
-
-    contenedor.innerHTML = "";
-
-
-    if (resultados.length === 0) {
-
-        contenedor.innerHTML = `
-            
-            <div class="sin-resultados">
-
-                <h2>No se encontraron artículos</h2>
-
-                <p>
-                    Intenta buscar otro artículo.
-                </p>
-
-            </div>
-
-        `;
-
-        return;
-    }
-
-
-    resultados.forEach((articulo) => {
-
-        const tarjeta = document.createElement("div");
-
-        tarjeta.classList.add("tarjeta-articulo");
-
-
-        tarjeta.innerHTML = `
-
-            <div class="imagen-articulo">
-
-                <img
-                    src="${articulo.imagen}"
-                    alt="${articulo.nombre}"
-                    onerror="this.src='imagenes/sin-imagen.jpeg'"
-                >
-
-            </div>
-
-
-            <div class="informacion-articulo">
-
-                <h2>${articulo.nombre}</h2>
-
-                <p class="precio-articulo">
-                    ${articulo.precio}
-                </p>
-
-                <p class="descripcion-articulo">
-                    ${articulo.descripcion}
-                </p>
-
-                <button
-                    class="boton-articulo"
-                    onclick="verArticulo('${articulo.nombre}')"
-                >
-                    Ver artículo
-                </button>
-
-            </div>
-
-        `;
-
-
-        contenedor.appendChild(tarjeta);
-
-    });
-
-}
-
-
-/* =========================================================
-   INICIAR PÁGINA
-   ========================================================= */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    // Mostrar artículos automáticamente
-    mostrarArticulos();
-
-
-    // Buscador
-    const buscador = document.getElementById("buscador");
-
-    if (buscador) {
-
-        buscador.addEventListener(
-            "input",
-            buscarArticulos
-        );
-
-    }
-
-
-    // Botón artículos
-    const botonArticulos =
-        document.getElementById("boton-articulos");
-
-    if (botonArticulos) {
-
-        botonArticulos.addEventListener(
-            "click",
-            irAArticulos
-        );
-
-    }
-
-
-    // Botón X
-    const botonCerrar =
-        document.getElementById("boton-x");
-
-    if (botonCerrar) {
-
-        botonCerrar.addEventListener(
-            "click",
-            regresarInicio
-        );
-
-    }
-
-});
-
+);
+```
